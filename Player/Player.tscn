@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tilesets/PlayerTileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Player/KinematicBody2D.gd" type="Script" id=3]
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 3
+script = ExtResource( 3 )
+
+[node name="PlayerTiles" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 24, 32 )
+collision_use_parent = true
+format = 1

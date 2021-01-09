@@ -1,0 +1,134 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Bricks/GreenBrick.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Bricks/BlueBrick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Game/level_bear.jpg" type="Texture" id=3]
+
+[node name="BaseLevelEasy" type="Node2D"]
+position = Vector2( 32, 32 )
+
+[node name="BlueBrick" parent="." instance=ExtResource( 2 )]
+
+[node name="BlueBrick2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 0 )
+
+[node name="BlueBrick3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, 0 )
+
+[node name="BlueBrick4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 288, 0 )
+
+[node name="BlueBrick10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 32 )
+
+[node name="BlueBrick11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 288, 64 )
+
+[node name="BlueBrick12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 576, 64 )
+
+[node name="BlueBrick18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 480, 96 )
+
+[node name="BlueBrick13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 384, 96 )
+
+[node name="BlueBrick14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 96 )
+
+[node name="BlueBrick15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 128 )
+
+[node name="BlueBrick16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 160 )
+
+[node name="BlueBrick22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 192 )
+
+[node name="BlueBrick17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 768, 96 )
+
+[node name="BlueBrick25" parent="." instance=ExtResource( 2 )]
+position = Vector2( 864, 96 )
+
+[node name="BlueBrick26" parent="." instance=ExtResource( 2 )]
+position = Vector2( 768, 128 )
+
+[node name="BlueBrick27" parent="." instance=ExtResource( 2 )]
+position = Vector2( 768, 160 )
+
+[node name="BlueBrick28" parent="." instance=ExtResource( 2 )]
+position = Vector2( 768, 192 )
+
+[node name="BlueBrick29" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 96 )
+
+[node name="BlueBrick19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 672, 32 )
+
+[node name="BlueBrick21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, 32 )
+
+[node name="BlueBrick20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 768, 32 )
+
+[node name="BlueBrick5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 384, 0 )
+
+[node name="BlueBrick6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 480, 0 )
+
+[node name="BlueBrick7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 576, 0 )
+
+[node name="BlueBrick8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 672, 0 )
+
+[node name="BlueBrick9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 768, 0 )
+
+[node name="BlueBrick23" parent="." instance=ExtResource( 2 )]
+position = Vector2( 864, 0 )
+
+[node name="BlueBrick24" parent="." instance=ExtResource( 2 )]
+position = Vector2( 864, 0 )
+
+[node name="GreenBrick" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, 32 )
+
+[node name="GreenBrick2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 768, 64 )
+
+[node name="GreenBrick7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 864, 32 )
+
+[node name="GreenBrick3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 32 )
+
+[node name="GreenBrick11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 32 )
+
+[node name="GreenBrick4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 384, 64 )
+
+[node name="GreenBrick9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 64 )
+
+[node name="GreenBrick10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 64 )
+
+[node name="GreenBrick5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 64 )
+
+[node name="GreenBrick6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 672, 64 )
+
+[node name="GreenBrick8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 64 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+scale = Vector2( 0.533333, 0.4 )
+texture = ExtResource( 3 )
+centered = false
