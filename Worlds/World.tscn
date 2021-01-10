@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Worlds/WallTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/Ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/DynamicLevel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameOverMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://LevelDoneMenu.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node"]
 
 [node name="DynamicLevelEasy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 32, 32 )
-columns = 11
+columns = 10
+rows = 3
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 368, 744 )
@@ -27,5 +29,10 @@ speed = 700
 
 [node name="GameOverMenu" parent="." instance=ExtResource( 5 )]
 visible = false
+
+[node name="LevelDoneMenu" parent="." instance=ExtResource( 6 )]
+[connection signal="level_done" from="DynamicLevelEasy" to="LevelDoneMenu" method="_on_DynamicLevelEasy_level_done"]
+[connection signal="level_done" from="DynamicLevelEasy" to="Player" method="_on_DynamicLevelEasy_level_done"]
+[connection signal="level_done" from="DynamicLevelEasy" to="Ball" method="_on_DynamicLevelEasy_level_done"]
 [connection signal="game_over" from="Ball" to="Player" method="_on_Ball_game_over"]
 [connection signal="game_over" from="Ball" to="GameOverMenu" method="_on_Ball_game_over"]

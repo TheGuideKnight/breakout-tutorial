@@ -1,4 +1,4 @@
 extends "res://Menu.gd"
 
-func _on_Ball_game_over():
+func _on_DynamicLevelEasy_level_done():
 	visible = true

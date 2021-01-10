@@ -63,3 +63,7 @@ func get_x_direction(collision: KinematicCollision2D):
 
 func _on_Ball_game_over():
 	game_over = true
+
+
+func _on_DynamicLevelEasy_level_done():
+	game_over = true
