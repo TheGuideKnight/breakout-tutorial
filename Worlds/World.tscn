@@ -31,8 +31,9 @@ speed = 700
 visible = false
 
 [node name="LevelDoneMenu" parent="." instance=ExtResource( 6 )]
-[connection signal="level_done" from="DynamicLevelEasy" to="LevelDoneMenu" method="_on_DynamicLevelEasy_level_done"]
-[connection signal="level_done" from="DynamicLevelEasy" to="Player" method="_on_DynamicLevelEasy_level_done"]
+visible = false
 [connection signal="level_done" from="DynamicLevelEasy" to="Ball" method="_on_DynamicLevelEasy_level_done"]
+[connection signal="level_done" from="DynamicLevelEasy" to="Player" method="_on_DynamicLevelEasy_level_done"]
+[connection signal="level_done" from="DynamicLevelEasy" to="LevelDoneMenu" method="_on_DynamicLevelEasy_level_done"]
 [connection signal="game_over" from="Ball" to="Player" method="_on_Ball_game_over"]
 [connection signal="game_over" from="Ball" to="GameOverMenu" method="_on_Ball_game_over"]

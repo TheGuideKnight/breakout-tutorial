@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Bricks/GreenBrick.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Bricks/BlueBrick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Bricks/Brick.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Game/level_bear.jpg" type="Texture" id=3]
+
 
 [node name="BaseLevelEasy" type="Node2D"]
 position = Vector2( 32, 32 )

@@ -3,9 +3,7 @@ extends Node2D
 export var columns = 7
 export var rows = 5
 
-const green_brick_class = preload("res://Bricks/GreenBrick.tscn")
-const blue_brick_class = preload("res://Bricks/BlueBrick.tscn")
-const dark_brick_class = preload("res://Bricks/DarkBrick.tscn")
+const brick_class = preload("res://Bricks/Brick.tscn")
 
 const cell_width = 96
 const cell_height = 32
@@ -18,25 +16,34 @@ var destroyable_bricks = []
 func _ready():
 	for column in range(0, columns):
 		for row in range(0, rows):
-			print(str("columng: ", column, " row: ", row))
 			var random = rand_range(0, 1)
+			var brick
 			if random < 0.3:
 				# Here we have a hole in the wall.
 				pass
 			elif random < 0.7:
-				# 0.3-0.7
-				var blue_brick = blue_brick_class.instance()
-				create_brick(blue_brick, row, column)
-				destroyable_bricks.append(blue_brick)
+				# 0.3-0.7				
+				brick = brick_class.instance()
+				initiate_brick(brick, row, column, brick.Frames.BLUE, 1, true)
 			elif random < 0.9:
 				# 0.7-0.9
-				var green_brick = green_brick_class.instance()				
-				create_brick(green_brick, row, column)
-				destroyable_bricks.append(green_brick)
+				brick = brick_class.instance()
+				initiate_brick(brick, row, column, brick.Frames.GREEN, 2, true)
 			else:
 				# 0.9-1
-				var dark_brick = dark_brick_class.instance()
-				create_brick(dark_brick, row, column)
+				brick = brick_class.instance()
+				initiate_brick(brick, row, column, brick.Frames.DARK, 9999, false)
+
+func initiate_brick(brick, row, column, brick_type, hp, is_destroyable):
+	brick.set_brick_type(brick_type)
+	brick.set_hp(hp)
+	if is_destroyable:
+		destroyable_bricks.append(brick)
+	
+	add_child(brick)
+	brick.position.x = cell_width * column
+	brick.position.y = cell_height * row
+
 
 func _physics_process(delta):
 	var found = false
@@ -46,12 +53,6 @@ func _physics_process(delta):
 	if not found:
 		print("level done")
 		emit_signal("level_done")
-	
-	
-func create_brick(brick: Node, row: int, column: int):
-	add_child(brick)
-	brick.position.x = cell_width * column
-	brick.position.y = cell_height * row
 
 
 func _on_DynamicLevelEasy_level_done():
