@@ -39,11 +39,18 @@ func _physics_process(delta):
 			direction.x = get_x_direction(collision)
 			# We need to normalize the direction, so that we don't get speed variations
 			direction = direction.normalized()
+			play_hit_sound("res://Assets/Game/Audio/hit_player.wav", 0.0)
 		else:
 			# Do wall or brick bounce
 			direction = direction.bounce(collision.normal)
 			if collision.collider.get_meta('type') == 'brick':
 				collision.collider.decrease_hp()
+				if collision.collider.is_indestructible():
+					play_hit_sound("res://Assets/Game/Audio/hit_player.wav", 0.1)
+				else:
+					play_hit_sound("res://Assets/Game/Audio/hit_brick.wav", 0.2)
+			else:
+				play_hit_sound("res://Assets/Game/Audio/hit_wall.wav", 0.1)
 			
 func check_for_game_over():
 	var on_screen = visibility_notifier.is_on_screen()
@@ -67,3 +74,10 @@ func _on_Ball_game_over():
 
 func _on_DynamicLevelEasy_level_done():
 	game_over = true
+
+func play_hit_sound(audio_file, offset):
+	var audio = AudioStreamPlayer.new()
+	get_tree().get_root().add_child(audio)
+	var file = load(audio_file) 
+	audio.set_stream(file)
+	audio.play(offset)

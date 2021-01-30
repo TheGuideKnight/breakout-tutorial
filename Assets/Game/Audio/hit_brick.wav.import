@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/pong.wav-9b647cbdc3366d91e7af895641e1434d.sample"
+path="res://.import/hit_brick.wav-fc8baa8ddc87e42e1d76ab8af2665436.sample"
 
 [deps]
 
-source_file="res://Assets/Game/Audio/pong.wav"
-dest_files=[ "res://.import/pong.wav-9b647cbdc3366d91e7af895641e1434d.sample" ]
+source_file="res://Assets/Game/Audio/hit_brick.wav"
+dest_files=[ "res://.import/hit_brick.wav-fc8baa8ddc87e42e1d76ab8af2665436.sample" ]
 
 [params]
 

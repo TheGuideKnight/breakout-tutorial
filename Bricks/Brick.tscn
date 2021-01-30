@@ -2,7 +2,9 @@
 
 [ext_resource path="res://Assets/Game/brick_blue.png" type="Texture" id=1]
 [ext_resource path="res://Bricks/Brick.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Game/Audio/pong.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Game/Audio/hit_brick.wav" type="AudioStream" id=3]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 16 )

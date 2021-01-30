@@ -24,20 +24,21 @@ func _ready():
 			elif random < 0.7:
 				# 0.3-0.7				
 				brick = brick_class.instance()
-				initiate_brick(brick, row, column, brick.Frames.BLUE, 1, true)
+				initiate_brick(brick, row, column, brick.Frames.BLUE, 1, false)
 			elif random < 0.9:
 				# 0.7-0.9
 				brick = brick_class.instance()
-				initiate_brick(brick, row, column, brick.Frames.GREEN, 2, true)
+				initiate_brick(brick, row, column, brick.Frames.GREEN, 2, false)
 			else:
 				# 0.9-1
 				brick = brick_class.instance()
-				initiate_brick(brick, row, column, brick.Frames.DARK, 9999, false)
+				initiate_brick(brick, row, column, brick.Frames.DARK, 9999, true)
 
-func initiate_brick(brick, row, column, brick_type, hp, is_destroyable):
+func initiate_brick(brick, row, column, brick_type, hp, indestructible):
 	brick.set_brick_type(brick_type)
 	brick.set_hp(hp)
-	if is_destroyable:
+	brick.set_indestructible(indestructible)
+	if not indestructible:
 		destroyable_bricks.append(brick)
 	
 	add_child(brick)
